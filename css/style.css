@@ -73,7 +73,7 @@ label.favourite::after{/*collegato al input tramite il for="input id"*/
     cursor: pointer;
 }
 input[type="checkbox"]:checked + label.favourite:hover::after{/*quando input è "checked" seleziona la fine del primo label posizionato subito dopo quando c'è il mouse sopra (scusate il trip mentale, ne vale la pena)*/
-    color:red;
+    color:#ff0000;
 }
 input[type="checkbox"] { /*nascondo il checkbox*/
     display: none;
@@ -89,7 +89,7 @@ input[type="checkbox"]:checked + label.favourite::after {/*quando input è "chec
     bottom:2rem;
 }
 .discount::before{
-    background-color: red;
+    background-color: #ff0000;
     margin-right:0.15rem;
     padding: 0.3rem 0.5rem
 }
@@ -101,7 +101,7 @@ input[type="checkbox"]:checked + label.favourite::after {/*quando input è "chec
 }
 .eco::after{
     content: 'Sostenibilità';
-    background-color: #00a900;
+    background-color: #008000;
     padding: 0.3rem 0.5rem;
 }
 
@@ -127,23 +127,45 @@ footer.product-desc{
     text-decoration: line-through;
 }
 .real-price{
-    color:red;
+    color:#ff0000;
     font-weight: bold;
 }
 
 /* ------------------------------- FOOTER ------------------------------ */
 footer:not(main footer){
-    background-color: black;
+    background-color: #1a1a1a;
     color:white;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
+}
+.credits-info,
+.socials-container{
+    margin-top: 0.5rem;
+    font-size: 0.6rem;
 }
 
-section.credits,
-section.socials{
-    flex-basis: 30%;
-    height: 3rem;
-    background-color: brown;
+section.socials nav a{
+    display: inline-block;
+    background-color: white;
+    border-radius: 2px;
+    margin-right: 0.3rem;
+    width: 1rem;
+    height: 1rem;
 }
+section.socials nav a:not(.invert) img{
+    filter: brightness(0) contrast(1);
+    -webkit-filter: brightness(0) contrast(1);
+}
+section.socials nav a.invert{
+    background-color: black;
+}
+section.socials nav a#ln img{
+    filter: invert(1);
+}
+section.socials nav a#face{
+    background-color: black;
+}
+
+
 
 /* ------------------------------- CLASSES ------------------------------ */
 .container{
@@ -227,23 +249,4 @@ article.articles-product:hover #mayadlx-dress{
 }
 article.articles-product:hover #esprit-sweater{
     background-image: url('../img/6b.webp');
-}
-
-/* da canmcellare */
-    /* crazy border */
-footer > section > section{
-    border: 2px dashed black;
-}
-
-footer > section > section > *{
-    height: 50%;
-    border: 2px dashed white;
-}
-footer nav a{
-    display: inline-block;
-    height: 1rem;
-    width: 3rem;
-    background-color: aqua;
-    border: 1px solid black;
-    margin: 0 0.5rem 0 0;
 }

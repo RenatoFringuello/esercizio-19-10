@@ -3,3 +3,109 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+header{
+    width: 100%;
+    z-index: 1;
+}
+
+header,
+footer{
+    height: 5rem;
+    background-color: red;
+}
+/* ------------------------------- HEADER ------------------------------ */
+
+/* ------------------------------- MAIN ------------------------------ */
+main{
+    padding-top:5rem;
+}
+
+section.articles-row{
+    background-color: aqua;
+    text-align: center;
+    padding: 2rem 0;
+}
+article.articles-product{
+    display: inline-block;
+    /* width per contenere footer ma si deve gestire in base all'img */
+    width: 20rem;
+}
+/* prod img */
+section.product-img{
+    background-color: blue;
+    width: 100%;
+    height: 25rem;
+}
+/* favourite thing */
+label.favourite::after{/*collegato al input tramite il for="input id"*/
+    content: '\2661';
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    font-size: 2.5rem;
+    background-color: aquamarine;
+}
+input#btnFav:checked + label.favourite:hover::after{/*quando input è "checked" seleziona la fine del primo label posizionato subito dopo quando c'è il mouse sopra (scusate il trip mentale, ne vale la pena)*/
+    color:red;
+}
+input#btnFav { /*nascondo il checkbox*/
+    display: none;
+}
+input#btnFav:checked + label.favourite::after {/*quando input è "checked" seleziona la fine del primo label posizionato subito dopo*/
+    content: '\2665';
+}
+
+/* prod info */
+.product-info{
+    background-color: beige;
+    color: white;
+    bottom:3rem;
+}
+.discount-30::before{
+    content: '-30%';
+    background-color: red;
+    margin-right:0.3rem;
+    padding: 0.3rem 0.8rem;
+}
+.eco::after{
+    content: 'Eco';
+    background-color: #00a900;
+    padding: 0.3rem 0.8rem;
+}
+
+/* prod description */
+footer.product-desc{
+    text-align: start;
+    padding: 0.8rem;
+    height: fit-content;
+}
+div.name{
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+/* ------------------------------- FOOTER ------------------------------ */
+
+
+/* ------------------------------- CLASSES ------------------------------ */
+.p-absolute{
+    position: absolute;
+}
+.p-relative{
+    position: relative;
+}
+.p-fixed{
+    position: fixed;
+}
+
+.disable-select {
+    user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+}

@@ -4,21 +4,27 @@
     box-sizing: border-box;
 }
 
+/* ------------------------------- HEADER ------------------------------ */
 header{
     width: 100%;
     z-index: 1;
-}
-
-header,
-footer{
-    height: 5rem;
+    padding: 1rem 0;
     background-color: red;
 }
-/* ------------------------------- HEADER ------------------------------ */
+header section > *{
+    background-color: green;
+    height: 2rem;
+}
+header nav{
+    flex-basis: 20%;
+}
+header a.logo{
+    flex-basis: 60%;
+}
 
 /* ------------------------------- MAIN ------------------------------ */
 main{
-    padding-top:5rem;
+    padding-top:4rem;
 }
 
 section.articles-row{
@@ -28,6 +34,7 @@ section.articles-row{
 }
 article.articles-product{
     display: inline-block;
+    background-color: #00a900;
     /* width per contenere footer ma si deve gestire in base all'img */
     width: 20rem;
 }
@@ -42,11 +49,11 @@ label.favourite::after{/*collegato al input tramite il for="input id"*/
     content: '\2661';
     position: absolute;
     top: 0.5rem;
-    right: 0.5rem;
+    right: 0rem;
     width: 2.5rem;
     height: 2.5rem;
     line-height: 2.5rem;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     background-color: aquamarine;
 }
 input#btnFav:checked + label.favourite:hover::after{/*quando input è "checked" seleziona la fine del primo label posizionato subito dopo quando c'è il mouse sopra (scusate il trip mentale, ne vale la pena)*/
@@ -63,7 +70,7 @@ input#btnFav:checked + label.favourite::after {/*quando input è "checked" selez
 .product-info{
     background-color: beige;
     color: white;
-    bottom:3rem;
+    bottom:2rem;
 }
 .discount-30::before{
     content: '-30%';
@@ -78,6 +85,9 @@ input#btnFav:checked + label.favourite::after {/*quando input è "checked" selez
 }
 
 /* prod description */
+main footer{
+    background-color: blueviolet;
+}
 footer.product-desc{
     text-align: start;
     padding: 0.8rem;
@@ -88,10 +98,35 @@ div.name{
     font-size: 1.3rem;
 }
 
-/* ------------------------------- FOOTER ------------------------------ */
+.brand-name{
+    font-size: 0.8rem;
+}
+.desc{
+    font-size:1.2rem;
+}
+.start-price{
+    text-decoration: line-through;
+}
 
+/* ------------------------------- FOOTER ------------------------------ */
+footer{
+    background-color: black;
+    color:white;
+    padding: 1.5rem 0;
+}
+
+section.credits,
+section.socials{
+    flex-basis: 30%;
+    height: 3rem;
+    background-color: brown;
+}
 
 /* ------------------------------- CLASSES ------------------------------ */
+.container{
+    width: 70%;
+    margin: 0 auto;
+}
 .p-absolute{
     position: absolute;
 }
@@ -108,4 +143,33 @@ div.name{
    -khtml-user-select: none; /* Konqueror HTML */
    -moz-user-select: none; /* Firefox */
    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.flex-between-center{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.text-a-end{
+    text-align: end;
+}
+
+/* da canmcellare */
+    /* crazy border */
+header > section *,
+footer > section > section{
+    border: 2px dashed black;
+}
+
+footer > section > section > *{
+    height: 50%;
+    border: 2px dashed white;
+}
+nav a{
+    display: inline-block;
+    height: 1rem;
+    width: 3rem;
+    background-color: aqua;
+    border: 1px solid black;
+    margin-right: 0.5rem;
 }

@@ -39,29 +39,29 @@ header a.logo{
 
 /* ------------------------------- MAIN ------------------------------ */
 main{
-    padding-top:4rem;
+    padding:3.1rem 0 2.5rem;/*header height = .logo height + header padding * 2 */
 }
 
 section.articles-row{
-    background-color: aqua;
     text-align: center;
-    padding: 2rem 0;
+    padding: 2.5rem 0 0;
 }
 article.articles-product{
     display: inline-block;
-    background-color: #00a900;
     /* width per contenere footer ma si deve gestire in base all'img */
-    width: 20rem;
+    width: 20.5rem;
 }
 /* prod img */
 section.product-img{
-    background-color: blue;
+    background-size: cover;
     width: 100%;
-    height: 25rem;
+    height: 28.7rem;
 }
 /* favourite thing */
 label.favourite::after{/*collegato al input tramite il for="input id"*/
-    content: '\2661';
+    font-family: 'Material Icons';
+    content: "favorite_outline";
+
     position: absolute;
     top: 0.5rem;
     right: 0rem;
@@ -69,62 +69,70 @@ label.favourite::after{/*collegato al input tramite il for="input id"*/
     height: 2.5rem;
     line-height: 2.5rem;
     font-size: 1.5rem;
-    background-color: aquamarine;
+    background-color: white;
+    cursor: pointer;
 }
-input#btnFav:checked + label.favourite:hover::after{/*quando input è "checked" seleziona la fine del primo label posizionato subito dopo quando c'è il mouse sopra (scusate il trip mentale, ne vale la pena)*/
+input[type="checkbox"]:checked + label.favourite:hover::after{/*quando input è "checked" seleziona la fine del primo label posizionato subito dopo quando c'è il mouse sopra (scusate il trip mentale, ne vale la pena)*/
     color:red;
 }
-input#btnFav { /*nascondo il checkbox*/
+input[type="checkbox"] { /*nascondo il checkbox*/
     display: none;
 }
-input#btnFav:checked + label.favourite::after {/*quando input è "checked" seleziona la fine del primo label posizionato subito dopo*/
-    content: '\2665';
+input[type="checkbox"]:checked + label.favourite::after {/*quando input è "checked" seleziona la fine del primo label posizionato subito dopo*/
+    /* content: '\2665'; */
+    content: "favorite";
 }
 
 /* prod info */
 .product-info{
-    background-color: beige;
     color: white;
     bottom:2rem;
 }
+.discount::before{
+    background-color: red;
+    margin-right:0.15rem;
+    padding: 0.3rem 0.5rem
+}
 .discount-30::before{
     content: '-30%';
-    background-color: red;
-    margin-right:0.3rem;
-    padding: 0.3rem 0.8rem;
+}
+.discount-50::before{
+    content: '-50%';
 }
 .eco::after{
-    content: 'Eco';
+    content: 'Sostenibilità';
     background-color: #00a900;
-    padding: 0.3rem 0.8rem;
+    padding: 0.3rem 0.5rem;
 }
 
 /* prod description */
-main footer{
-    background-color: blueviolet;
-}
 footer.product-desc{
     text-align: start;
-    padding: 0.8rem;
-    height: fit-content;
-}
-div.name{
-    font-weight: bold;
-    font-size: 1.3rem;
+    padding: 0.2rem 0;
 }
 
-.brand-name{
-    font-size: 0.8rem;
-}
 .desc{
-    font-size:1.2rem;
+    font-size:0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.price,
+.brand-name{
+    font-size: 0.75rem;
+}
+.price::after{
+    content: ' €';
 }
 .start-price{
     text-decoration: line-through;
 }
+.real-price{
+    color:red;
+    font-weight: bold;
+}
 
 /* ------------------------------- FOOTER ------------------------------ */
-footer{
+footer:not(main footer){
     background-color: black;
     color:white;
     padding: 1.5rem 0;
@@ -177,6 +185,49 @@ section.socials{
     font-weight: bold;
 }
 
+
+/* ----------------------------------- IDS ---------------------------- */
+#levis-t-shirt{
+    background-image: url('../img/1.webp');
+}
+article.articles-product:hover #levis-t-shirt{
+    background-image: url('../img/1b.webp');
+}
+
+#guess-t-shirt{
+    background-image: url('../img/2.webp');
+}
+article.articles-product:hover #guess-t-shirt{
+    background-image: url('../img/2b.webp');
+}
+
+#czf-tailleur{
+    background-image: url('../img/3.webp');
+}
+article.articles-product:hover #czf-tailleur{
+    background-image: url('../img/3b.webp');
+}
+
+#levis-t-shirt-unisx{
+    background-image: url('../img/4.webp');
+}
+article.articles-product:hover #levis-t-shirt-unisx{
+    background-image: url('../img/4b.webp');
+}
+
+#mayadlx-dress{
+    background-image: url('../img/5.webp');
+}
+article.articles-product:hover #mayadlx-dress{
+    background-image: url('../img/5b.webp');
+}
+
+#esprit-sweater{
+    background-image: url('../img/6.webp');
+}
+article.articles-product:hover #esprit-sweater{
+    background-image: url('../img/6b.webp');
+}
 
 /* da canmcellare */
     /* crazy border */
